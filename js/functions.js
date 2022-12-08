@@ -34,7 +34,7 @@ jQuery(function () {
       '$1'
     ) === ''
   ) {
-    if (new Date().getHours() > 20 || new Date().getHours() < 6) {
+    if (new Date().getHours() > 18 || new Date().getHours() < 6) {
       document.body.classList.add('night')
       document.cookie = 'night=1;path=/'
       console.log('夜间模式开启')
