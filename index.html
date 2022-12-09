@@ -1,164 +1,29 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="只想不被世俗困住，追寻所喜之物，做所喜之事">
-  <meta name="keywords" content="HTML,CSS,JavaScript">
-  <meta name="robots" content="max-image-preview:large">
-  <!-- 网站标题 -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>小莫笔记</title>
-  <!-- 调用ICON地址 -->
-  <link rel="icon" href="img/favicon.png">
-  <!-- Css样式调用 -->
-  <link rel="stylesheet" type="text/css" href="css/fonts.css" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <script type="text/javascript">
+    var system = {};
+    var p = navigator.platform;
+    system.win = p.indexOf("Win") == 0;
+    system.mac = p.indexOf("Mac") == 0;
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+    if (system.win || system.mac || system.xll) {
+      //如果是电脑跳转到
+      window.location.href = "/page/home.html";
+    } else {
+      //如果是手机,跳转到
+      window.location.href = "/page/mp.html";
+    }
+  </script>
 </head>
 
-
 <body>
-  <div class="index-one">
-    <div class="site-header">
-      <canvas id="canvas"></canvas>
-    </div>
-    <div class="index-welcome">
-      <div class="index-welcome-greetings">嗨！欢迎来到小莫笔记</div>
-      <h2 class="index-welcome-thanks">缘分的路上 偏偏遇见你</h2>
-      <div class="weclome">
-        <i></i>
 
-        <h3>这里是小莫的个人主页</h3>
-        <h5>希望这里能让你舒适</h5>
-      </div>
-      <a class="index-rand-post"><span>小莫语录</span><br>下次见你，我要以好久不见的名义抱你。</a>
-    </div>
-    <div class="index-new-post">
-      <h2 class="part-title">站点信息<span>xiaomo</span></h2>
-      <li>
-        <div class="entry-post"><img width="2903" height="1935" src="img/2022061011452163.webp"
-            class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""></div>
-        <div class="entry-header">
-          <h5 class="entry-title"><a href="https://xiaomo.love" rel="bookmark">笔记</a></h5>
-          <div class="post_content">
-            <span class="entry-date" id="runtime_span"></span>
-            <div class="post-categories"><span class="tag vcard"><a href="#" rel="category tag">点击笔记有惊喜</a></span>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="entry-post"><img width="5184" height="3456" src="img/2022060801504749.webp"
-            class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy"></div>
-        <div class="entry-header">
-          <h5 class="entry-title"><a href="#" rel="bookmark">桃花源</a></h5>
-          <div class="post_content">
-            <span class="entry-date"><a href="#" rel="bookmark">该站已运行8年</a></span>
-            <div class="post-categories"><span class="tag vcard"><a href="#" rel="category tag">输入你的站点信息或者介绍</a></span>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="entry-post"><img width="1717" height="706" src="img/2022011301462560.webp"
-            class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy"></div>
-        <div class="entry-header">
-          <h5 class="entry-title"><a href="#" rel="bookmark">桃花源</a></h5>
-          <div class="post_content">
-            <span class="entry-date"><a href="https://icp.gov.moe/?keyword=20229963"
-                target="_blank">萌ICP备20229952号</a></span>
-            <div class="post-categories"><span class="tag vcard"><a href="#" rel="category tag">输入你的站点信息或者介绍</a></span>
-            </div>
-          </div>
-        </div>
-      </li>
-      <nav class="navigation paging-navigation" role="navigation">
-        <h1 class="screen-reader-text">Posts navigation</h1>
-        <div class="nav-links">
-        </div>
-      </nav>
-    </div>
-  </div>
-  <!-- 背景js -->
-  <script type="text/javascript">
-    var canvas = document.getElementById('canvas'),
-      ctx = canvas.getContext('2d'),
-      w = canvas.width = window.innerWidth,
-      h = canvas.height = window.innerHeight,
-      hue = 217,
-      stars = [],
-      count = 0,
-      maxStars = 1000;
-    var canvas2 = document.createElement('canvas'),
-      ctx2 = canvas2.getContext('2d');
-    canvas2.width = 100;
-    canvas2.height = 100;
-    var half = canvas2.width / 2,
-      gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
-    gradient2.addColorStop(0.025, '#fff');
-    gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
-    gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
-    gradient2.addColorStop(1, 'transparent');
-    ctx2.fillStyle = gradient2;
-    ctx2.beginPath();
-    ctx2.arc(half, half, half, 0, Math.PI * 2);
-    ctx2.fill();
-
-    function random(min, max) {
-      if (arguments.length < 2) {
-        max = min;
-        min = 0;
-      }
-      if (min > max) {
-        var hold = max;
-        max = min;
-        min = hold;
-      }
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-    var Star = function () {
-      this.orbitRadius = random(w / 2 - 50);
-      this.radius = random(100, this.orbitRadius) / 10;
-      this.orbitX = w / 2;
-      this.orbitY = h / 2;
-      this.timePassed = random(0, maxStars);
-      this.speed = random(this.orbitRadius) / 1000000;
-      this.alpha = random(2, 10) / 10;
-      count++;
-      stars[count] = this;
-    }
-    Star.prototype.draw = function () {
-      var x = Math.sin(this.timePassed + 1) * this.orbitRadius + this.orbitX,
-        y = Math.cos(this.timePassed) * this.orbitRadius / 2 + this.orbitY,
-        twinkle = random(10);
-      if (twinkle === 1 && this.alpha > 0) {
-        this.alpha -= 0.05;
-      } else if (twinkle === 2 && this.alpha < 1) {
-        this.alpha += 0.05;
-      }
-      ctx.globalAlpha = this.alpha;
-      ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
-      this.timePassed += this.speed;
-    }
-    for (var i = 0; i < maxStars; i++) {
-      new Star();
-    }
-
-    function animation() {
-      ctx.globalCompositeOperation = 'source-over';
-      ctx.globalAlpha = 0.8;
-      ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 1)';
-      ctx.fillRect(0, 0, w, h)
-      ctx.globalCompositeOperation = 'lighter';
-      for (var i = 1, l = stars.length; i < l; i++) {
-        stars[i].draw();
-      };
-      window.requestAnimationFrame(animation);
-    }
-    animation();
-  </script>
-  <!-- Javascript样式调用 -->
-  <script src="js/time.js"></script>
 </body>
 
 </html>

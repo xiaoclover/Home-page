@@ -12,7 +12,7 @@
 
 .index-welcome-thanks {
   font-size: 1.75rem;
-  font-family: 'YouSheBiaoTiHei';
+  font-family: 'HarmonyOS';
   animation: margin 1.5s cubic-bezier(0.62, 0.21, 0.25, 1) 1 both, opacity 1.5s cubic-bezier(0.62, 0.21, 0.25, 1) 1 both;
   animation-delay: .3s;
   -webkit-mask: linear-gradient(#000 30%, rgba(0, 0, 0, .7) 70%);
@@ -164,11 +164,12 @@ canvas {
   background: var(--s-background, rgb(255 255 255 / 10%));
   box-shadow: 0 0 10px 2px rgb(0 0 0 / 10%);
   margin: 0 .5em 0 0;
+  border-radius: 5px;
 }
 
 .index-old-post a:after,
 .index-rand-post:after {
-  content: "\e627";
+  content: "🌹";
   font-family: 'iconfont';
   opacity: 0;
   transform: translateX(-10px);
@@ -229,14 +230,17 @@ canvas {
 
 .index-new-post li:nth-child(2) .entry-header {
   animation-delay: .3s;
+  border-radius: 8px;
 }
 
 .index-new-post li:nth-child(3) .entry-header {
   animation-delay: .4s;
+  border-radius: 8px;
 }
 
 .index-new-post li:nth-child(4) .entry-header {
   animation-delay: .5s;
+  border-radius: 8px;
 }
 
 .index-new-post .paging-navigation {
@@ -286,7 +290,7 @@ canvas {
 .part-title {
   position: relative;
   font-size: 1rem;
-  font-family: 'YouSheBiaoTiHei';
+  font-family: 'HarmonyOS';
 }
 
 .part-title span {
@@ -463,5 +467,3 @@ canvas {
     left: 50%;
   }
 }
-
-</style>

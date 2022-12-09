@@ -1190,13 +1190,13 @@ body:not(.home) .icon-yuanquanquan {
 
 .site-header .site-title {
   margin: 0;
-  font-family: 'YouSheBiaoTiHei';
+  font-family: 'HarmonyOS';
   font-weight: 400;
 }
 
 .site-title a {
   color: inherit;
-  font-family: 'Edo-SZ';
+  font-family: 'HarmonyOS';
 }
 
 /* =index
@@ -1434,7 +1434,7 @@ body:not(.category) .category-photo .entry-thyuupost {
   color: var(--color);
   margin: 0;
   flex: 1 1 100%;
-  font-family: 'YouSheBiaoTiHei';
+  font-family: 'HarmonyOS';
   font-weight: normal;
 }
 
@@ -1543,7 +1543,7 @@ body:not(.category) .category-photo .entry-thyuupost {
 
 .single .entry-title h1 {
   line-height: 1.5;
-  font-family: 'YouSheBiaoTiHei';
+  font-family: 'HarmonyOS';
   max-width: 20rem;
   width: 50%;
   margin: 0 0 .5rem 0;

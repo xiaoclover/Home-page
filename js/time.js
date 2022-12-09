@@ -12,6 +12,11 @@ function show_runtime() {
   C = Math.floor((b - B) * 60)
   D = Math.floor((c - C) * 60)
   document.getElementById('runtime_span').innerHTML =
-    '👨‍🌾 感谢陪伴  ' + A + '天' + B + '小时' + C + '分' + D + '秒'
+    '👨‍🌾 感谢陪伴  ' + A + '天星辰'
 }
 show_runtime()
+
+if ('ontouchstart' in document) {
+  document.getElementById('mian').style.display = 'none'
+  document.getElementById('log').style.display = 'block'
+}
